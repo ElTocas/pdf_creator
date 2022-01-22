@@ -100,6 +100,8 @@ me1 = ok_gen(me1);me2 = ok_gen(me2);me3 = ok_gen(me3)
 gi1 = ok_gen(gi1);gi2 = ok_gen(gi2);gi3 = ok_gen(gi3)
 ve1 = ok_gen(ve1);ve2 = ok_gen(ve2);ve3 = ok_gen(ve3)
 sa1 = ok_gen(sa1)
+
+data_now = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
 if submit:
     html = template.render(
         nome=Nome,
@@ -117,7 +119,7 @@ if submit:
         gi1=gi1, gi2=gi2, gi3=gi3,
         ve1=ve1, ve2=ve2, ve3=ve3,
         sa1=sa1,
-        date=datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S'),
+        date=data_now,
         
     )
 
@@ -127,7 +129,7 @@ if submit:
     st.success("🎉 Your PDF was generated!")
     # st.write(html, unsafe_allow_html=True)
     # st.write("")
-    nome_file_pdf = str(Nome) + "_" + str(Cognome) + "_" + str(date) + ".pdf"
+    nome_file_pdf = str(Nome) + "_" + str(Cognome) + "_" + str(data_now) + ".pdf"
 
     st.download_button(
         "⬇️ Download PDF",
@@ -139,4 +141,4 @@ if submit:
 if st.button("INVIA MAIL (beta):"):
     subject = "Info Iscrizione  " + Nome + " " + Cognome + " Precompiled"
     body = "Ciao"
-    u.open_mail("to.martire@gmail.com",subject,body)
+    u.open_mail(indirizzo_mail,"to.martire@gmail.com",subject,body)
