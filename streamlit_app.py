@@ -4,6 +4,9 @@ from datetime import date, timedelta, datetime
 import streamlit as st
 from streamlit.components.v1 import iframe
 
+import prova_mail as u
+
+
 st.set_page_config(layout="centered", page_icon="🎓", page_title="British Generator")
 st.title("British PDF Generator")
 
@@ -132,3 +135,8 @@ if submit:
         file_name=nome_file_pdf,
         mime="application/octet-stream",
     )
+
+    if st.button("INVIA MAIL (beta):"):
+        subject = "Info Iscrizione  " + Nome + " " + Cognome + " Precompiled"
+        body = "Ciao"
+        u.open_mail("to.martire@gmail.com",subject,body)
