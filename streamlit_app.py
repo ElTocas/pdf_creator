@@ -124,9 +124,11 @@ if submit:
     st.success("🎉 Your PDF was generated!")
     # st.write(html, unsafe_allow_html=True)
     # st.write("")
+    nome_file_pdf = nome + "_" + cognome + "_" + date + ".pdf"
+
     st.download_button(
         "⬇️ Download PDF",
         data=pdf,
-        file_name="diploma.pdf",
+        file_name=nome_file_pdf,
         mime="application/octet-stream",
     )
