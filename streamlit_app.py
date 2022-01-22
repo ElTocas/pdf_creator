@@ -127,7 +127,7 @@ if submit:
     st.success("🎉 Your PDF was generated!")
     # st.write(html, unsafe_allow_html=True)
     # st.write("")
-    nome_file_pdf = nome + "_" + cognome + "_" + date + ".pdf"
+    nome_file_pdf = Nome + "_" + Cognome + "_" + date + ".pdf"
 
     st.download_button(
         "⬇️ Download PDF",
