@@ -34,12 +34,12 @@ telefono = form.text_input("Telefono",autocomplete ="tel")
 
 
 course = form.selectbox(
-    "Scegli il livello del corso che vorresti seguire",
+    "Scegli il livello del corso che ti è stato consigliato",
     ["A2", "A1","B2", "B1","C2", "C1"],
     index=3,
 )
 course_type = form.selectbox(
-    "Scegli che tipologia di corso vorresti seguire",
+    "Scegli la tipologia del corso che ti è stato consigliato",
     ["Individuale", "Semi-individuale","Gruppo"],
     index=1,
 )
