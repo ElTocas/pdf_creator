@@ -141,4 +141,5 @@ if submit:
 if st.button("INVIA MAIL (beta):"):
     subject = "Info Iscrizione  " + Nome + " " + Cognome + " Precompiled"
     body = "Ciao"
+    st.write(indirizzo_mail)
     u.open_mail(indirizzo_mail,"to.martire@gmail.com",subject,body)
