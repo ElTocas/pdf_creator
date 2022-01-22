@@ -137,9 +137,3 @@ if submit:
         file_name=nome_file_pdf,
         mime="application/octet-stream",
     )
-
-if st.button("INVIA MAIL (beta):"):
-    subject = "Info Iscrizione  " + Nome + " " + Cognome + " Precompiled"
-    body = "Ciao"
-    st.write(indirizzo_mail)
-    u.open_mail(indirizzo_mail,"to.martire@gmail.com",subject,body)
