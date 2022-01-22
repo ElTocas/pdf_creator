@@ -137,11 +137,6 @@ if submit:
     )
 
     st.header("GREAT")
-    st.write("Il documento " + nome_file_pdf + " è stato generato. Ora per favore invia il modulo " )
-    subject = 'Info&nbsp;Iscrizione&nbsp' + str(Nome) + '&nbsp' + str(Cognome)
-    body= 'Hi,%0DSono&nbsp' + str(Nome) + '&nbsp' + str(Cognome) + ',&nbspsarei&nbspinteressat&nbspad&nbspun&nbspCorso&nbsp' + str(course) + ',&nbsp' + str(course_type) + '&nbspin&nbspmodalità&nbsp' + str(course_presenza) + '%0D' + 'Grazie%0D' + str(telefono)
-
-    testohtml  = '<a href="mailto:to.martire@gmail.com?subject=' + subject + '&body=' + body + '>Contact us !</a>'
-    st.write(testohtml)
-    st.markdown(testohtml, unsafe_allow_html=True)
-    st.markdown('<a href="mailto:email@address.com?subject=Hello world&body=Line one%0DLine two">Email me</a>')
+    st.write("Il documento " + nome_file_pdf + " è stato generato correttamento." )
+    contenuto = "mailto:to.martire@gmail.com?&subject=Info%20e%20Iscrizione%20da%20" + Nome + "%20" + Cognome + "&body=Ciao,%0DSono%20" + Nome +"%20"+ Cognome + ",%20sarei%20interessat*%20ad%20un%20Corso%20" + course + ",%20" + course_type + "%20" + course_presenza + "%0D" + "Grazie%0D" + telefono
+    st.markdown('<a href="' + contenuto + '">Prova a mandarci una mail precompilata e allegaci il PDF generato per ottimizzare la fase di avvio del corso</a>', unsafe_allow_html=True)
