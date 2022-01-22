@@ -127,7 +127,7 @@ if submit:
     st.success("🎉 Your PDF was generated!")
     # st.write(html, unsafe_allow_html=True)
     # st.write("")
-    nome_file_pdf = Nome + "_" + Cognome + "_" + date + ".pdf"
+    nome_file_pdf = str(Nome) + "_" + str(Cognome) + "_" + str(date) + ".pdf"
 
     st.download_button(
         "⬇️ Download PDF",
@@ -136,7 +136,7 @@ if submit:
         mime="application/octet-stream",
     )
 
-    if st.button("INVIA MAIL (beta):"):
-        subject = "Info Iscrizione  " + Nome + " " + Cognome + " Precompiled"
-        body = "Ciao"
-        u.open_mail("to.martire@gmail.com",subject,body)
+if st.button("INVIA MAIL (beta):"):
+    subject = "Info Iscrizione  " + Nome + " " + Cognome + " Precompiled"
+    body = "Ciao"
+    u.open_mail("to.martire@gmail.com",subject,body)
