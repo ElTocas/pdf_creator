@@ -4,8 +4,6 @@ from datetime import date, timedelta, datetime
 import streamlit as st
 from streamlit.components.v1 import iframe
 
-import prova_mail as u
-
 
 st.set_page_config(layout="centered", page_icon="🎓", page_title="British Generator")
 st.title("British PDF Generator")
@@ -131,9 +129,19 @@ if submit:
     # st.write("")
     nome_file_pdf = str(Nome) + "_" + str(Cognome) + "_" + str(data_now) + ".pdf"
 
-    st.download_button(
+    Bella = st.download_button(
         "⬇️ Download PDF",
         data=pdf,
         file_name=nome_file_pdf,
         mime="application/octet-stream",
     )
+
+    st.header("GREAT")
+    st.write("Il documento " + nome_file_pdf + " è stato generato. Ora per favore invia il modulo " )
+    subject = 'Info&nbsp;Iscrizione&nbsp' + str(Nome) + '&nbsp' + str(Cognome)
+    body= 'Hi,%0DSono&nbsp' + str(Nome) + '&nbsp' + str(Cognome) + ',&nbspsarei&nbspinteressat&nbspad&nbspun&nbspCorso&nbsp' + str(course) + ',&nbsp' + str(course_type) + '&nbspin&nbspmodalità&nbsp' + str(course_presenza) + '%0D' + 'Grazie%0D' + str(telefono)
+
+    testohtml  = '<a href="mailto:to.martire@gmail.com?subject=' + subject + '&body=' + body + '>Contact us !</a>'
+    st.write(testohtml)
+    st.markdown(testohtml, unsafe_allow_html=True)
+    st.markdown('<a href="mailto:email@address.com?subject=Hello world&body=Line one%0DLine two">Email me</a>')
