@@ -9,11 +9,9 @@ def open_mail(sender,receiver,subject,body):
     #
     password = st.text_input("Enter a password", type="password")
     if st.button("send"):
-        yagmail.register(sender,password)
-        yag = yagmail.SMTP(sender)
-        yag.send(
+        yagmail.SMTP(sender,password).send(
             to=receiver,
             subject="Yagmail test with attachment",
-            contents=body, 
+            contents="CIAO", 
             #attachments=filename,
         )
