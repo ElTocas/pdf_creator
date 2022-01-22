@@ -128,15 +128,15 @@ if submit:
     # st.write(html, unsafe_allow_html=True)
     # st.write("")
     nome_file_pdf = str(Nome) + "_" + str(Cognome) + "_" + str(data_now) + ".pdf"
+    st.header("GREAT")
+    st.write("Il documento " + nome_file_pdf + " è stato generato correttamento. Scaricalo e salvalo")
 
-    Bella = st.download_button(
+    st.download_button(
         "⬇️ Download PDF",
         data=pdf,
         file_name=nome_file_pdf,
-        mime="application/octet-stream",
-    )
+        mime="application/octet-stream")
 
-    st.header("GREAT")
-    st.write("Il documento " + nome_file_pdf + " è stato generato correttamento. Scaricalo e salvalo")
-    contenuto = "mailto:to.martire@gmail.com?&subject=Info%20e%20Iscrizione%20da%20" + Nome + "%20" + Cognome + "&body=Ciao,%0DSono%20" + Nome +"%20"+ Cognome + ",%20sarei%20interessat*%20ad%20un%20Corso%20" + course + ",%20" + course_type + "%20" + course_presenza + "%0D" + "Grazie%0D" + telefono
-    st.markdown('<a href="' + contenuto + '">Prova a mandarci una mail precompilata e allegaci il PDF generato per ottimizzare la fase di avvio del corso</a>', unsafe_allow_html=True)
+contenuto = "mailto:to.martire@gmail.com?&subject=Info%20e%20Iscrizione%20da%20" + Nome + "%20" + Cognome + "&body=Ciao,%0DSono%20" + Nome +"%20"+ Cognome + ",%20sarei%20interessat*%20ad%20un%20Corso%20" + course + ",%20" + course_type + "%20" + course_presenza + "%0D" + "Grazie%0D" + telefono
+st.markdown('<a href="' + contenuto + '">Prova a mandarci una mail precompilata e allegaci il PDF generato per ottimizzare la fase di avvio del corso</a>', unsafe_allow_html=True)
+
