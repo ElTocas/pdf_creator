@@ -1,6 +1,6 @@
 import pdfkit
 from jinja2 import Environment, PackageLoader, select_autoescape, FileSystemLoader
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 import streamlit as st
 from streamlit.components.v1 import iframe
 
@@ -114,7 +114,8 @@ if submit:
         gi1=gi1, gi2=gi2, gi3=gi3,
         ve1=ve1, ve2=ve2, ve3=ve3,
         sa1=sa1,
-        date=date.today().strftime("%d-%m-%Y, %H:%M:%S"),
+        date=datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S'),
+        
     )
 
     pdf = pdfkit.from_string(html, False)
